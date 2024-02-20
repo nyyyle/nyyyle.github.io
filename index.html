@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+        }
+        button{
+            height: 97.2px;
+            width: 449.3px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: 0;
+            position: fixed;
+            background-image: url("startButton.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="start()"></button>
+
+    <script>
+        let w = window.innerWidth
+        let h = window.innerHeight
+
+        function start(){
+            window.location.href = 'pageTWO.html'
+        }
+    </script>
+</body>
+</html>
