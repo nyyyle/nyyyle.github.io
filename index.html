@@ -21,7 +21,6 @@
             transform: translate(-50%,-50%);
             margin: 0;
             position: fixed;
-            background-image: url("startButton.png");
             background-size: cover;
             background-repeat: no-repeat;
             overflow: hidden;
@@ -31,13 +30,23 @@
 <body>
     
     <button onclick="start()"></button>
-
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
+        let bkimg
+        let stimg
 
         function start(){
             window.location.href = 'pageTWO.html'
+        }
+
+        function setup(){
+            createCanvas(w,h)
+        }
+
+        function preload(){
+            let bkimg = loadImage("Opening.png")
+            let stimg = loadImage("startButton.png")
         }
     </script>
 </body>
