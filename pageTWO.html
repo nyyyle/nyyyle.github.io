@@ -15,15 +15,17 @@
         let w = window.innerWidth
         let h = window.innerHeight
 
-    //  canvas
+    // canvas
     function setup(){
         createCanvas(w,h)
-        background("startButton.png")
+        background("objective.png")
     }
 
-    //draw
-    function draw(){
-        
+    // is e is pressed
+    function keyPressed(){
+        if (keyCode == 69){
+            window.location.href = "pageTHREE.html"
+        }
     }
     </script>
 </body>
