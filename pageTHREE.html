@@ -7,20 +7,88 @@
     <script defer src="https://unpkg.com/p5.collide2d"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+        }
+        #Rbutton{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            background-image: url("redCar.png");
+            position: absolute;
+            z-index: 1;
+            top: 831.1px;
+            left: 108px;
+            transform: translate(-279.85px,-100.75px);
+            height: 201.5px;
+            width: 559.7px;
+        }
+        #Ybutton{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            background-image: url("yellowCar.png");
+            position: absolute;
+            z-index: 1;
+            top: 750.6px;
+            left: 667.7px;
+            transform: translate(-279.85px,-100.75px);
+            height: 201.5px;
+            width: 559.7px;
+        }
+        #Gbutton{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            background-image: url("greyCar.png");
+            position: absolute;
+            z-index: 1;
+            top: 806.1px;
+            left: 1282.8px;
+            transform: translate(-279.85px,-100.75px);
+            height: 201.5px;
+            width: 559.7px;
+        }
     </style>
 </head>
 <body>
-    
+    <button onclick="red()" id="Rbutton"></button>
+    <button onclick="yellow()" id="Ybutton"></button>
+    <button onclick="grey()" id="Gbutton"></button>
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
+        let bk
 
     // canvas
     function setup(){
         createCanvas(w,h)
-        background("pickAcar.png")
     }
 
+    function preload(){
+        bk = loadImage("pickAcar.png")
+    }
+
+    function draw(){
+        background(bk)
+    }
+
+    // car functions
+    function red(){
+        window.location.href = "red.html"
+    }
+    function yellow(){
+        window.location.href = "yellow.html"
+    }
+    function grey(){
+        window.location.href = "grey.html"
+    }
     </script>
 </body>
 </html>
