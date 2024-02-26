@@ -7,6 +7,12 @@
     <script defer src="https://unpkg.com/p5.collide2d"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -14,11 +20,20 @@
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
+        let bg
 
-    // canvas
+
+        function preload(){
+            bg = loadImage("objective.png")
+        }
+        // canvas
     function setup(){
         createCanvas(w,h)
-        background("objective.png")
+    }
+
+    //draw
+    function draw(){
+        background(bg)
     }
 
     // is e is pressed
