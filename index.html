@@ -13,41 +13,48 @@
             overflow: hidden;
             border: none;
         }
-        button{
-            height: 97.2px;
-            width: 449.3px;
+        #button{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            background-image: url("start.png");
+            position: absolute;
+            z-index: 1;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-            margin: 0;
-            position: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            overflow: hidden;
+            transform: translate(-280px,-56.25px);
+            height: 112.5px;
+            width: 520px;
         }
     </style>
 </head>
 <body>
     
-    <button onclick="start()"></button>
+    <button onclick="start()" id="button"></button>
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
         let bkimg
-        let stimg
 
         function start(){
             window.location.href = 'pageTWO.html'
+        }
+
+        function preload(){
+            bkimg = loadImage("noStart.png")
         }
 
         function setup(){
             createCanvas(w,h)
         }
 
-        function preload(){
-            let bkimg = loadImage("Opening.png")
-            let stimg = loadImage("startButton.png")
+        function draw(){
+            background(bkimg)
+
         }
+
+        
     </script>
 </body>
 </html>
