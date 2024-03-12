@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+        }
+        #button{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+            background-image: url("startButton.png");
+            background-color: RGBA(0,0,0,0.1);
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-280px,-56.25px);
+            height: 112.5px;
+            width: 520px;
+        }
+    </style>
+</head>
+<body> 
+    
+    <button onclick="restart()" id="button"></button>
+    <script>
+        let w = window.innerWidth
+        let h = window.innerHeight
+        let bkimg
+
+        document.getElementById("button").style.backgroundImage="url(startButton.png)"
+
+        function restart(){
+            window.location.href = 'pageTWO.html'
+        }
+
+        function setup(){
+            createCanvas(w,h)
+        }
+
+        function draw(){
+            background("lose.png")
+
+        }
+
+    </script>
+</body>
+</html>
