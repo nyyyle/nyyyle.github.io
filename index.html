@@ -18,7 +18,8 @@
             padding: 0;
             overflow: hidden;
             border: none;
-            background-image: url("start.png");
+            background-image: url("startButton.png");
+            background-color: RGBA(0,0,0,0.1);
             position: absolute;
             z-index: 1;
             top: 50%;
@@ -29,13 +30,15 @@
         }
     </style>
 </head>
-<body>
+<body> 
     
     <button onclick="start()" id="button"></button>
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
         let bkimg
+
+        button.style.backgroundImage="url(startButton.png)"
 
         function start(){
             window.location.href = 'pageTWO.html'
