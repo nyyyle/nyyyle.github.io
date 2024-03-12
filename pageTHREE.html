@@ -6,6 +6,9 @@
     <title>Document</title>
     <script defer src="https://unpkg.com/p5.collide2d"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&family=Pixelify+Sans:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <style>
         body{
             margin: 0;
@@ -55,40 +58,91 @@
             height: 201.5px;
             width: 559.7px;
         }
+        #timer{
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 50px;
+            width: 100px;
+        }
     </style>
 </head>
 <body>
     <button onclick="red()" id="Rbutton"></button>
     <button onclick="yellow()" id="Ybutton"></button>
     <button onclick="grey()" id="Gbutton"></button>
+    <div id="car"></div>
+    <h1 id="timer"></h1>
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
         let bk
-
+        let time = 100
+        let player
     // canvas
     function setup(){
         createCanvas(w,h)
+        player = new Sprite(50,100)
+        ground = new Sprite (45,100, 200, 10, "static")
     }
+    // move camera with player movement
+    camera.x = player.x
+
 
     function preload(){
         bk = loadImage("pickAcar.png")
     }
 
     function draw(){
+        clear()
         background(bk)
+
+        if (car != bk){
+            background(ferigjhbigjefoihfbigjeofihfugieofjighbgireofjrighijeofrighieopfjwrighrieofjrigheofjrghiweofjrigh)
+        }
+
     }
 
-    // car functions
+    //random cars that pop up
+    let number = random
+
+    function timer(){
+        time -= 1
+        document.getElementById("timer").innerHTML = time
+    }
+
+    // game portion
+    function start(){
+        timer()
+        
+    }
+
+    // change car color based on what user chooses
     function red(){
-        window.location.href = "red.html"
+        document.getElementById("car").style.backgroundImage = "url('redCar.png')"
+        start()
     }
     function yellow(){
-        window.location.href = "yellow.html"
+        document.getElementById("car").style.backgroundImage = "url('yellowCar.png')"
+        start()
     }
     function grey(){
-        window.location.href = "grey.html"
+        document.getElementById("car").style.backgroundImage = "url('greyCar.png')"
+        start()
+    }
+
+
+    if (timer = 0 && finish != true){
+        window.location.href = 'pageFour.html'
+    }
+    if (finish = true){
+        window.location.href = "pageFIVE.html"
     }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/addons/p5.sound.min.js"></script>
+            
+    <script src="https://p5play.org/v3/planck.min.js"></script>
+    <script src="https://p5play.org/v3/p5play.js"></script>
 </body>
 </html>
