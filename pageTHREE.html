@@ -74,56 +74,53 @@
     <div id="car"></div>
     <h1 id="timer"></h1>
     <script>
+        // setup height
         let w = window.innerWidth
         let h = window.innerHeight
-        let bk
+        // player timer
         let time = 100
+        // user
         let player
+        // finish line completion
         let finish = false
-        let passed = colliderectrect()
+        // make user pick a car before start
+        let chosen = false
     // canvas
     function setup(){
         createCanvas(w,h)
-        player = new Sprite(50,100)
-        ground = new Sprite (45,100, 200, 10, "static")
-        // move camera with player movement
-        camera.x = player.x
     }
-    function preload(){
-        bk = loadImage("pickAcar.png")
-    }
-
+    // draw
     function draw(){
         clear()
-        background(bk)
-
-        if (car != bk){
-            background(url("pickAcar.png"))
+        background("pickAcar.png")
+        // keep background image the same if no action taken
+        if (chosen == false){
+            background("pickAcar.png")
         }
-        if (time = 0 && finish != true){
-            window.location.href = 'pageFour.html'
+        // change background if player chose car and start game
+        if (chosen == true){
+            background("road.png")
+            document.getElementById("timer").innerHTML = timer
+            setInterval(function(){
+                time -= 1, 1000
+            })
         }
-        if (finish = true){
-            window.location.href = "pageFIVE.html"
-        }
+        // make player win if they pass the finish line in time
         if (passed = true){
             finish = true
         }
+        // if player loses
+        if (time = 0 && finish != true){
+            window.location.href = 'pageFour.html'
+        }
+        // send player to the winner page
+        if (finish = true){
+            window.location.href = "pageFIVE.html"
+        }
     }
 
-    //random cars that pop up
+    //random objects that pop up
     let number = Math.random(5)
-
-    function timer(){
-        time -= 1
-        document.getElementById("timer").innerHTML = time
-    }
-
-    // game portion
-    function start(){
-        timer()
-        
-    }
 
     // change car color based on what user chooses
     function red(){
