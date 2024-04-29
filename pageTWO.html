@@ -20,6 +20,12 @@
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
+        let bg
+
+
+        function preload(){
+            bg = loadImage("howTO.png")
+        }
         // canvas
     function setup(){
         createCanvas(w,h)
@@ -27,7 +33,7 @@
 
     //draw
     function draw(){
-        background("howTO.png")
+        background(bg)
     }
 
     // is e is pressed
