@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -82,24 +85,37 @@ body {
 	padding: 3px 10px;
 }
 #timer{
-	color: pink;
+	color: #594FAF;
+	font-size: 50px;
+	font-family: "Archivo Black", sans-serif;
+}
+#level{
+	color: #594FAF;
+	font-size: 20px;
+	font-weight: bold;
 }
 
     </style>
 </head>
 <body>
+	<p id="level">Level 1</p>
 	<p id="timer"></p>
-	<p id="level"></p>
 	<div class="generate-maze"></div>
 	<div class="checkbox"></div>
     <script>
 // timer
 let timer = 60
 function time(){
-	timer--
-	document.getElementById("timer").innerHTML = timer
+		timer--
+		document.getElementById("timer").innerHTML = timer
+
+		if (timer===0){
+			clearInterval(timerInterval)
+			// MAKE SURE TO TURN ON LATER
+			//window.location.href = "pageFIVE.html"
+		}
 }
-setInterval(time, 1000)
+let timerInterval = setInterval(time, 1000)
 
 // gamw
 const nrows = Math.floor(innerHeight / 45) - 6;
@@ -278,14 +294,6 @@ btn.addEventListener("click", function () {
 	}
 });
 
-// let checkbox = document.querySelector(".checkbox");
-// checkbox.addEventListener("click", function () {
-// 	if (checkbox.innerHTML.includes("check"))
-// 		checkbox.innerHTML = `<i class="fas fa-times"></i>`;
-// 	else checkbox.innerHTML = `<i class="fas fa-check"></i>`;
-// 	canAnimate = !canAnimate;
-// });
-
 document.body.addEventListener("keydown", function (event) {
 	if (play) {
 		cellElements[current.r * ncols + current.c].innerHTML = ``;
@@ -305,6 +313,7 @@ document.body.addEventListener("keydown", function (event) {
 function checkWin() {
 	if (current === goal) {
 		play = false;
+		window.location.href = 'levelTWO.html'
 	}
 }
 
