@@ -31,18 +31,9 @@
     </style>
 </head>
 <body> 
-    
-    <button onclick="restart()" id="button"></button>
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
-        let bkimg
-
-        document.getElementById("button").style.backgroundImage="url(startButton.png)"
-
-        function restart(){
-            window.location.href = 'pageTWO.html'
-        }
 
         function setup(){
             createCanvas(w,h)
@@ -50,7 +41,12 @@
 
         function draw(){
             background("win.png")
+        }
 
+        function keyPressed(){
+        if (keyCode == 69){
+            window.location.href = "pageTWO.html"
+        }
         }
 
     </script>
