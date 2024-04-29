@@ -118,10 +118,10 @@ function time(){
 let timerInterval = setInterval(time, 1000)
 
 // gamw
-const nrows = Math.floor(innerHeight / 45) - 6;
-const ncols = Math.floor(innerWidth / 45) - 1;
-const taxi = `<img src="car.png" height="27px" width="35px"></img>`;
-const flag = `<img src="flag.png" height="30px" width="50px"></img>`;
+let nrows = Math.floor(innerHeight / 45) - 6;
+let ncols = Math.floor(innerWidth / 45) - 1;
+let taxi = `<img src="car.png" height="27px" width="35px"></img>`;
+let flag = `<img src="flag.png" height="30px" width="50px"></img>`;
 
 function createCells() {
 	for (let i = 0; i < nrows; i++) {
