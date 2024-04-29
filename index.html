@@ -13,33 +13,17 @@
             overflow: hidden;
             border: none;
         }
-        #button{
-            margin: 0px;
-            padding: 0px;
-            overflow: hidden;
-            border: none;
-            position: absolute;
-            z-index: 1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-280px,-56.25px);
-            height: 112.5px;
-            width: 520px;
-            background: url("startButton.png")
-        }
-        #botton{
-            transform: translate(-50%, -50%)
-        }
     </style>
 </head>
 <body> 
+    
     <script>
         let w = window.innerWidth
         let h = window.innerHeight
         let bkimg
 
-        function start(){
-            window.location.href = 'pageTWO.html'
+        function preload(){
+            bkimg = loadImage("start.png")
         }
 
         function setup(){
@@ -47,8 +31,13 @@
         }
 
         function draw(){
-            background("start.png")
+            background(bkimg)
 
+        }
+        function keyPressed(){
+        if (keyCode == 69){
+            window.location.href = "pageTWO.html"
+        }
         }
     </script>
 </body>
