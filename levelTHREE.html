@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+	<script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -103,8 +104,17 @@ body {
 	<div class="generate-maze"></div>
 	<div class="checkbox"></div>
     <script>
+		let music
+        function preload(){
+            music = loadSound("music.mp3")
+        }
+        function setup(){
+            createCanvas(w,h)
+            music.loop()
+            music.setVolume(0.5)
+        }
 // timer
-let timer = 60
+let timer = 100
 function time(){
 		timer--
 		document.getElementById("timer").innerHTML = timer
@@ -112,7 +122,7 @@ function time(){
 		if (timer===0){
 			clearInterval(timerInterval)
 			// MAKE SURE TO TURN ON LATER (NEXT LEVEL)
-			//window.location.href = "pageFIVE.html"
+			window.location.href = "pageFIVE.html"
 		}
 }
 let timerInterval = setInterval(time, 1000)
@@ -313,7 +323,7 @@ document.body.addEventListener("keydown", function (event) {
 function checkWin() {
 	if (current === goal) {
 		play = false;
-		window.location.href = 'levelTWO.html'
+		window.location.href = 'levelFOUR.html'
 	}
 }
 
