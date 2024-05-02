@@ -23,7 +23,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	background: #CAC4F8;
+	background: #6ec9cf;
 }
 
 .row {
@@ -35,8 +35,8 @@ body {
 .cell {
 	height: 45px;
 	width: 45px;
-	border-bottom: 4px solid #ECB1FF;
-	border-right: 4px solid #ECB1FF;
+	border-bottom: 4px solid #20ADC9;
+	border-right: 4px solid #20ADC9;
 
 	position: relative; /*To fix the Corner Border */
 
@@ -47,11 +47,11 @@ body {
 }
 
 .first-col {
-	border-left: 4px solid #ECB1FF;
+	border-left: 4px solid #20ADC9;
 }
 
 .first-row {
-	border-top: 4px solid #ECB1FF;
+	border-top: 4px solid #20ADC9;
 }
 
 /* This fixes the Corner Border */
@@ -62,7 +62,7 @@ body {
 	bottom: 0;
 	width: 4px;
 	height: 4px;
-	background: #ECB1FF;
+	background: #20ADC9;
 }
 
 .middle-row {
@@ -81,18 +81,18 @@ body {
 }
 
 .visualize-maze {
-	border-top: 3px solid #ECB1FF;
-	border-left: 3px solid #ECB1FF;
-	border-bottom: 3px solid #ECB1FF;
+	border-top: 3px solid #20ADC9;
+	border-left: 3px solid #20ADC9;
+	border-bottom: 3px solid #20ADC9;
 	padding: 3px 10px;
 }
 #timer{
-	color: #594FAF;
+	color: #0091D1;
 	font-size: 50px;
 	font-family: "Archivo Black", sans-serif;
 }
 #level{
-	color: #594FAF;
+	color: #0091D1;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -172,7 +172,7 @@ class Cell {
 			cellElements[this.r * ncols + this.c].style["border-left"] = "none";
 
 		if (this.visited)
-			cellElements[this.r * ncols + this.c].style.background = "#594FAF";
+			cellElements[this.r * ncols + this.c].style.background = "#0091D1";
 	}
 	createNeighbors() {
 		if (this.r > 0) this.neighbors.push(grid[(this.r - 1) * ncols + this.c]); //Top
@@ -215,7 +215,7 @@ let popUps = [];
 
 //Maze Generator Algorithm
 function BacktrackingDFS() {
-	cellElements[current.r * ncols + current.c].style.background = "#594FAF";
+	cellElements[current.r * ncols + current.c].style.background = "#0091D1";
 	if (!current.visited) {
 		current.visited = true;
 		stack.push(current);
@@ -257,7 +257,7 @@ function BacktrackingDFS() {
 	} else {
 		clearInterval(drawLoop);
 		play = true;
-		cellElements[current.r * ncols + current.c].style.background = "#594FAF";
+		cellElements[current.r * ncols + current.c].style.background = "#0091D1";
 		cellElements[goal.r * ncols + goal.c].innerHTML = flag;
 		cellElements[current.r * ncols + current.c].innerHTML = taxi;
 	}
